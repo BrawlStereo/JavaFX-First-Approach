@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.invoice.controller.MainController">
+    <top>
+        <VBox spacing="8" style="-fx-padding: 10;">
+            <HBox spacing="8">
+                <Label text="Cliente:" />
+                <ComboBox fx:id="cbClients" prefWidth="250" />
+                <Label text="Folio:" />
+                <Label fx:id="lblFolio" />
+                <Button text="Historial" onAction="#openHistory" />
+                <Button text="Guardar borrador" onAction="#saveDraft" />
+                <Button text="Generar factura" onAction="#generateInvoice" />
+                <Button text="Restablecer formulario" onAction="#resetForm" />
+            </HBox>
+            <HBox spacing="8">
+                <Label text="RFC:" />
+                <TextField fx:id="tfRfc" editable="false" prefWidth="250" />
+                <Label text="Fecha emisión:" />
+                <DatePicker fx:id="dpIssue" />
+                <Label text="Fecha vencimiento:" />
+                <DatePicker fx:id="dpDue" />
+            </HBox>
+            <HBox spacing="8">
+                <Label text="Dirección:" />
+                <TextField fx:id="tfAddress" editable="false" prefWidth="600" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="8" style="-fx-padding: 10;">
+            <HBox spacing="8">
+                <VBox spacing="6">
+                    <Label text="Productos" />
+                    <ListView fx:id="lvProducts" prefWidth="260" prefHeight="200" />
+                </VBox>
+
+                <VBox spacing="8" HBox.hgrow="ALWAYS">
+                    <HBox spacing="8">
+                        <Label text="Cantidad:" />
+                        <TextField fx:id="tfQty" prefWidth="80" />
+                    </HBox>
+
+                    <TableView fx:id="tvItems" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colName" text="Producto" prefWidth="220" />
+                    <TableColumn fx:id="colSku" text="SKU" prefWidth="80" />
+                    <TableColumn fx:id="colQty" text="Cantidad" prefWidth="80" />
+                    <TableColumn fx:id="colUnit" text="Precio Unitario" prefWidth="120" />
+                    <TableColumn fx:id="colTotal" text="Subtotal" prefWidth="120" />
+                    <TableColumn fx:id="colActions" text="Acciones" prefWidth="100" />
+                </columns>
+            </TableView>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </center>
+
+    <bottom>
+        <VBox spacing="6" style="-fx-padding: 10;">
+            <HBox>
+                <Button text="Guardar borrador" onAction="#saveDraft" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Generar factura" onAction="#generateInvoice" />
+            </HBox>
+            <HBox spacing="10" style="-fx-padding: 0;" alignment="CENTER_RIGHT">
+                <Label text="Subtotal:" />
+                <Label fx:id="lblSubtotal" prefWidth="120" />
+                <Label text="IVA (16%):" />
+                <Label fx:id="lblIva" prefWidth="120" />
+                <Label text="Total:" />
+                <Label fx:id="lblTotal" prefWidth="120" style="-fx-font-weight: bold; -fx-font-size: 16px;" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

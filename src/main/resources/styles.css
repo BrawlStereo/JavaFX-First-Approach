@@ -1,0 +1,21 @@
+/* Simple styling for the invoice app */
+root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+}
+
+.total-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+TableView {
+    -fx-border-color: #ccc;
+}
+
+Button {
+    -fx-cursor: hand;
+}

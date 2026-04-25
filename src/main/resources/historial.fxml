@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.invoice.controller.HistorialController">
+    <top>
+        <HBox spacing="8" style="-fx-padding: 10;">
+            <Label text="Desde:" />
+            <DatePicker fx:id="dpFrom" />
+            <Label text="Hasta:" />
+            <DatePicker fx:id="dpTo" />
+            <Button text="Filtrar" onAction="#onFilter" />
+            <Button text="Limpiar filtro" onAction="#onClearFilter" />
+        </HBox>
+    </top>
+    <center>
+        <SplitPane orientation="HORIZONTAL">
+            <TableView fx:id="tvInvoices" prefWidth="400">
+                <columns>
+                    <TableColumn fx:id="colFolio" text="Folio" prefWidth="120" />
+                    <TableColumn fx:id="colCliente" text="Cliente" prefWidth="160" />
+                    <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120" />
+                    <TableColumn fx:id="colTotal" text="Total" prefWidth="120" />
+                    <TableColumn fx:id="colStatus" text="Estatus" prefWidth="100" />
+                </columns>
+            </TableView>
+            <VBox style="-fx-padding: 10;">
+                <Label text="Detalle de factura:" />
+                <TableView fx:id="tvDetail" prefHeight="400">
+                    <columns>
+                        <TableColumn fx:id="dProd" text="Producto" prefWidth="180" />
+                        <TableColumn fx:id="dSku" text="SKU" prefWidth="80" />
+                        <TableColumn fx:id="dQty" text="Cantidad" prefWidth="80" />
+                        <TableColumn fx:id="dUnit" text="Precio Unitario" prefWidth="100" />
+                        <TableColumn fx:id="dSub" text="Subtotal" prefWidth="100" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

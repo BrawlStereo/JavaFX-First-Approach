@@ -1,0 +1,35 @@
+# Maven
+/target/
+
+# IntelliJ
+*.iml
+.idea/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Build outputs
+bin/
+
+# OS files
+Thumbs.db
+
+# Others
+.env
+
+# Optional: local JavaFX SDK if placed here
+/javafx-sdk-
